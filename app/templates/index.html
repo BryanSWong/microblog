@@ -8,10 +8,12 @@
 		{% endif %}
 	</head>
 	<body>
-
-		<h1>Hello, {{ user.nickname }}!</h1>
-		{% for post in posts %}
-		<div><p>{{ post.author.nickname }} say: <b>{{ post.body }}</b></p></div>
-		{% endfor %}
+		{% extends "base.html" %}
+		{% block content %}
+			<h1>Hello, {{ user.nickname }}!</h1>
+			{% for post in posts %}
+			<div><p>{{ post.author.nickname }} say: <b>{{ post.body }}</b></p></div>
+			{% endfor %}
+		{% endblock %}
 	</body>
 </html>
